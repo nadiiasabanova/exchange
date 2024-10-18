@@ -1,38 +1,92 @@
-.App {
+.container {
+  display: flex;
+
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 80px;
+  background-color: #f0f4f7; /* Світло-сірий фон */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+/* .amount {
+  display: block;
+} */
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.input-field div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #8fa4ae; /* Світло-сірий бордюр */
+  border-radius: 5px;
+  background-color: #fff; /* Світло-зелений фон */
+  color: #333;
+}
+
+.select-dropdown {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #8fa4ae; /* Світло-сірий бордюр */
+  border-radius: 5px;
+  background-color: #6dc6c9; /* Світло-блакитний фон */
+  color: #333;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: #4caf50; /* Зелена обводка при фокусі */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Зелена тінь при фокусі */
+}
+
+span {
+  margin-top: 41px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #092927; /* Темно-зелений текст */
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 940px) {
+  .container {
+    padding: 20px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  span {
+    margin-top: 0px;
+  }
+  .input-field {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  span {
+    font-size: 1.25rem;
   }
 }
